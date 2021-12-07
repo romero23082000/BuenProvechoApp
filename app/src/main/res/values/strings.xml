@@ -10,6 +10,6 @@
     <string name="menu_home">Productos</string>
     <string name="menu_gallery">Servicios</string>
     <string name="menu_slideshow">Sucursales</string>
-    <string name="menu_contact">Contactos</string>
+    <string name="menu_servicios">Servicios</string>
 
 </resources>

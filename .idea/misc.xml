@@ -10,8 +10,12 @@
         <entry key="..\:/Users/andre/AndroidStudioProjects/provechofood/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.2203125" />
         <entry key="..\:/Users/andre/AndroidStudioProjects/provechofood/app/src/main/res/drawable/side_nav_bar.xml" value="0.2203125" />
         <entry key="..\:/Users/andre/AndroidStudioProjects/provechofood/app/src/main/res/layout/activity_main2.xml" value="0.20427305888483585" />
-        <entry key="..\:/Users/andre/AndroidStudioProjects/provechofood/app/src/main/res/layout/fragment_home.xml" value="0.12771739130434784" />
-        <entry key="..\:/Users/andre/AndroidStudioProjects/provechofood/app/src/main/res/menu/activity_main2_drawer.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/andre/AndroidStudioProjects/provechofood/app/src/main/res/layout/activity_principal.xml" value="0.3523809523809524" />
+        <entry key="..\:/Users/andre/AndroidStudioProjects/provechofood/app/src/main/res/layout/fragment_gallery.xml" value="0.1" />
+        <entry key="..\:/Users/andre/AndroidStudioProjects/provechofood/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Users/andre/AndroidStudioProjects/provechofood/app/src/main/res/layout/fragment_servicios.xml" value="0.25" />
+        <entry key="..\:/Users/andre/AndroidStudioProjects/provechofood/app/src/main/res/layout/fragment_slideshow.xml" value="0.40790742526518803" />
+        <entry key="..\:/Users/andre/AndroidStudioProjects/provechofood/app/src/main/res/menu/activity_main2_drawer.xml" value="0.25" />
         <entry key="..\:/Users/andre/AndroidStudioProjects/provechofood/app/src/main/res/menu/main2.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/andre/AndroidStudioProjects/provechofood/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1125" />
       </map>
