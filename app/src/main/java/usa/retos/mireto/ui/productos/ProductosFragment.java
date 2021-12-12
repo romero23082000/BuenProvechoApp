@@ -1,4 +1,4 @@
-package usa.retos.mireto.ui.servicios;
+package usa.retos.mireto.ui.productos;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,34 +18,36 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import usa.retos.mireto.FormActivity;
 import usa.retos.mireto.R;
-import usa.retos.mireto.databinding.FragmentHomeBinding;
-import usa.retos.mireto.databinding.FragmentServiciosBinding;
+import usa.retos.mireto.databinding.FragmentProductosBinding;
+
+public class ProductosFragment extends Fragment {
 
 
-public class ServiciosFragment extends Fragment {
-
-    private FragmentServiciosBinding binding;
+    private FragmentProductosBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
+            ViewGroup container, Bundle savedInstanceState) {
 
 
-        binding = FragmentServiciosBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+    binding = FragmentProductosBinding.inflate(inflater, container, false);
+    View root = binding.getRoot();
 
 
         return root;
-        }
+    }
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
     }
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
     }
+
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
@@ -56,9 +58,9 @@ public class ServiciosFragment extends Fragment {
         switch (item.getItemId()){
             case R.id.action_add:
                 Intent intent = new Intent(getContext(), FormActivity.class);
-                intent.putExtra("name","Servicios");
+                intent.putExtra("name","Productos");
                 getActivity().startActivity(intent);
-                //Toast.makeText(getContext(), "Servicios", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getContext(), "Productos", Toast.LENGTH_SHORT).show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

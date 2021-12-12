@@ -1,6 +1,5 @@
 package usa.retos.mireto;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -8,9 +7,6 @@ import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
-
-import java.util.Timer;
-import java.util.TimerTask;
 
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -61,7 +57,7 @@ public class Main2Activity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfi = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_servicios)
+                R.id.nav_home, R.id.nav_productos, R.id.nav_sucursales, R.id.nav_servicios)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main2);
