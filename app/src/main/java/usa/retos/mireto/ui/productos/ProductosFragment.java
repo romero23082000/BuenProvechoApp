@@ -1,6 +1,7 @@
 package usa.retos.mireto.ui.productos;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -8,8 +9,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,19 +22,37 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import usa.retos.mireto.FormActivity;
 import usa.retos.mireto.R;
+import usa.retos.mireto.adaptadores.ProductoAdapter;
+import usa.retos.mireto.casos_uso.CasoUsoProducto;
 import usa.retos.mireto.databinding.FragmentProductosBinding;
+import usa.retos.mireto.datos.DBHelper;
+import usa.retos.mireto.modelos.Producto;
 
 public class ProductosFragment extends Fragment {
 
+    private String TABLE_NAME = "PRODUCTOS";
+    private CasoUsoProducto casoUsoProducto;
+    private GridView gridView;
+    private DBHelper dbHelper;
+    private ArrayList<Producto> productos;
 
-    private FragmentProductosBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
 
 
-    binding = FragmentProductosBinding.inflate(inflater, container, false);
-    View root = binding.getRoot();
+        View root = inflater.inflate(R.layout.fragment_productos, container,false);
+        try{
+            casoUsoProducto = new CasoUsoProducto();
+            dbHelper = new DBHelper(getContext());
+            Cursor cursor = dbHelper.getData(TABLE_NAME);
+            productos = casoUsoProducto.llenarListaProductos(cursor);
+            gridView = (GridView) root.findViewById(R.id.gridProductos);
+            ProductoAdapter productoAdapter = new ProductoAdapter(root.getContext(), productos);
+            gridView.setAdapter(productoAdapter);
+        }catch (Exception e){
+            Toast.makeText(getContext(), e.toString(), Toast.LENGTH_LONG).show();
+        }
 
 
         return root;
@@ -39,7 +61,7 @@ public class ProductosFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        binding = null;
+
     }
 
     @Override
