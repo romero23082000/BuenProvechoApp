@@ -60,9 +60,7 @@ public class SucursalAdapter extends BaseAdapter {
         Bitmap bitmap = BitmapFactory.decodeByteArray(image, 0, image.length);
 
 
-
-
-        campoId.setText("ID :" + sucursal.getId());
+        campoId.setText("id :" + sucursal.getId());
         campo1.setText( sucursal.getName());
         campo2.setText( sucursal.getDescription());
         campo3.setText( sucursal.getLocation());

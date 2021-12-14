@@ -22,21 +22,21 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE PRODUCTOS("+
                 "id INTEGER PRIMARY KEY AUTOINCREMENT,"+
                 "name VARCAHR,"+
-                "decription VARCHAR,"+
+                "description VARCHAR,"+
                 "price VARCHAR,"+
                 "image BLOB"+
                 ")");
         db.execSQL("CREATE TABLE SERVICIOS("+
                 "id INTEGER PRIMARY KEY AUTOINCREMENT,"+
                 "name VARCAHR,"+
-                "decription VARCHAR,"+
+                "description VARCHAR,"+
                 "price VARCHAR,"+
                 "image BLOB"+
                 ")");
         db.execSQL("CREATE TABLE SUCURSALES("+
                 "id INTEGER PRIMARY KEY AUTOINCREMENT,"+
                 "name VARCAHR,"+
-                "decription VARCHAR,"+
+                "description VARCHAR,"+
                 "location VARCHAR,"+
                 "image BLOB"+
                 ")");
