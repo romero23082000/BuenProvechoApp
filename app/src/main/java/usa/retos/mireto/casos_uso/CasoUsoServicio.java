@@ -4,24 +4,24 @@ import android.database.Cursor;
 
 import java.util.ArrayList;
 
-import usa.retos.mireto.modelos.Producto;
-import usa.retos.mireto.modelos.Sucursal;
 
-public class CasoUsoSucursales {
-    public ArrayList<Sucursal> llenarListaSucursales(Cursor cursor){
-        ArrayList<Sucursal> list = new ArrayList<>();
+import usa.retos.mireto.modelos.Servicio;
+
+public class CasoUsoServicio {
+    public ArrayList<Servicio> llenarListaServicios(Cursor cursor){
+        ArrayList<Servicio> list = new ArrayList<>();
         if(cursor.getCount() == 0){
             return list;
         }else {
             while (cursor.moveToNext()) {
-                Sucursal sucursal = new Sucursal(
+                Servicio servicio = new Servicio(
                         cursor.getInt(0),
                         cursor.getString(1),
                         cursor.getString(2),
                         cursor.getString(3),
                         cursor.getBlob(4)
                 );
-                list.add(sucursal);
+                list.add(servicio);
             }
             return list;
         }
