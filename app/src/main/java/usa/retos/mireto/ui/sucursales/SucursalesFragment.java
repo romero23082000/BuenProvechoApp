@@ -53,12 +53,17 @@ public class SucursalesFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_sucursales, container,false);
         try{
             casoUsoSucursal = new CasoUsoSucursal();
-            dbHelperSucursal = new DBHelperSucursal(getContext());
-            Cursor cursor = dbHelperSucursal.getSucursales();
-            sucursales = casoUsoSucursal.llenarListaSucursales(cursor);
+            apiOraSucursal = new ApiOraSucursal(root.getContext());
             gridView = (GridView) root.findViewById(R.id.gridSucursales);
-            SucursalAdapter sucursalAdapter = new SucursalAdapter(root.getContext(), sucursales);
-            gridView.setAdapter(sucursalAdapter);
+            apiOraSucursal.getAllSucursales(gridView);
+
+            //*******SQLITE -CODIGO********
+            //dbHelperSucursal = new DBHelperSucursal(getContext());
+            //Cursor cursor = dbHelperSucursal.getSucursales();
+            //sucursales = casoUsoSucursal.llenarListaSucursales(cursor);
+            //SucursalAdapter sucursalAdapter = new SucursalAdapter(root.getContext(), sucursales);
+            //gridView.setAdapter(sucursalAdapter);
+
         }catch (Exception e){
             Toast.makeText(getContext(), e.toString(), Toast.LENGTH_LONG).show();
         }
