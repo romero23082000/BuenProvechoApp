@@ -21,6 +21,11 @@
                 android:title="@string/action_add"
                 android:orderInCategory="100"
                 app:showAsAction="ifRoom"/>
+            <item
+                android:id="@+id/action_add_sucursal"
+                android:title="Agregar sucursal"
+                android:orderInCategory="100"
+                app:showAsAction="ifRoom"/>
         </menu>
     </item>
 </menu>

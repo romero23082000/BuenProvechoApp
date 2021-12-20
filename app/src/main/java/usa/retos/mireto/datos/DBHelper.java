@@ -33,20 +33,14 @@ public class DBHelper extends SQLiteOpenHelper {
                 "price VARCHAR,"+
                 "image BLOB"+
                 ")");
-        db.execSQL("CREATE TABLE SUCURSALES("+
-                "id INTEGER PRIMARY KEY AUTOINCREMENT,"+
-                "name VARCAHR,"+
-                "description VARCHAR,"+
-                "location VARCHAR,"+
-                "image BLOB"+
-                ")");
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL("DROP TABLE IF EXISTS PRODUCTOS");
         db.execSQL("DROP TABLE IF EXISTS SERVICIOS");
-        db.execSQL("DROP TABLE IF EXISTS SUCURSALES");
+
     }
 
     //metodos propios

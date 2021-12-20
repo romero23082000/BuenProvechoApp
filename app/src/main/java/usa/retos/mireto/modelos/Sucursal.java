@@ -3,15 +3,13 @@ package usa.retos.mireto.modelos;
 public class Sucursal {
     private int id;
     private String name;
-    private String description;
-    private String location;
+    private String localization;
     private byte[] image;
 
-    public Sucursal(int id, String name, String description, String location, byte[] image) {
+    public Sucursal(int id, String name, String localization, byte[] image) {
         this.id = id;
         this.name = name;
-        this.description = description;
-        this.location = location;
+        this.localization = localization;
         this.image = image;
     }
 
@@ -34,20 +32,12 @@ public class Sucursal {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getLocalization() {
+        return localization;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
+    public void setLocalization(String localization) {
+        this.localization = localization;
     }
 
     public byte[] getImage() {

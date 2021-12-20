@@ -47,13 +47,12 @@ public class SucursalAdapter extends BaseAdapter {
             inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
         if(convertView == null){
-            convertView = inflater.inflate(R.layout.grid_item,null);
+            convertView = inflater.inflate(R.layout.sucursal_item,null);
         }
         ImageView imageView = convertView.findViewById(R.id.imgItem);
-        TextView campo1 = convertView.findViewById(R.id.tvCampo1);
-        TextView campo2 = convertView.findViewById(R.id.tvCampo2);
-        TextView campo3 = convertView.findViewById(R.id.tvCampo3);
-        TextView campoId = convertView.findViewById(R.id.tvId);
+        TextView campo1 = convertView.findViewById(R.id.tvNameItem);
+        TextView campo2 = convertView.findViewById(R.id.tvLocationItem);
+        TextView campoId = convertView.findViewById(R.id.tvIdItem);
 
         Sucursal sucursal = sucursals.get(position);
         byte[] image = sucursal.getImage();
@@ -62,8 +61,7 @@ public class SucursalAdapter extends BaseAdapter {
 
         campoId.setText("id :" + sucursal.getId());
         campo1.setText( sucursal.getName());
-        campo2.setText( sucursal.getDescription());
-        campo3.setText( sucursal.getLocation());
+        campo2.setText( sucursal.getLocalization());
         imageView.setImageBitmap(bitmap);
         return convertView;
     }

@@ -14,9 +14,12 @@ import usa.retos.mireto.adaptadores.SucursalAdapter;
 import usa.retos.mireto.casos_uso.CasoUsoProducto;
 import usa.retos.mireto.casos_uso.CasoUsoSucursal;
 import usa.retos.mireto.databinding.FragmentSucursalesBinding;
+import usa.retos.mireto.datos.ApiOraSucursal;
 import usa.retos.mireto.datos.DBHelper;
+import usa.retos.mireto.datos.DBHelperSucursal;
 import usa.retos.mireto.modelos.Producto;
 import usa.retos.mireto.modelos.Sucursal;
+import usa.retos.mireto.ui.SucursalForm;
 
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -38,21 +41,22 @@ public class SucursalesFragment extends Fragment {
     private String TABLE_NAME = "SUCURSALES";
     private CasoUsoSucursal casoUsoSucursal;
     private GridView gridView;
-    private DBHelper dbHelper;
-    private ArrayList<Sucursal> sucursales;
+    private DBHelperSucursal dbHelperSucursal;
+    private ArrayList<Sucursal> sucursales = new ArrayList<>();
+    private ApiOraSucursal apiOraSucursal;
 
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        View root = inflater.inflate(R.layout.fragment_productos, container,false);
+        View root = inflater.inflate(R.layout.fragment_sucursales, container,false);
         try{
             casoUsoSucursal = new CasoUsoSucursal();
-            dbHelper = new DBHelper(getContext());
-            Cursor cursor = dbHelper.getData(TABLE_NAME);
+            dbHelperSucursal = new DBHelperSucursal(getContext());
+            Cursor cursor = dbHelperSucursal.getSucursales();
             sucursales = casoUsoSucursal.llenarListaSucursales(cursor);
-            gridView = (GridView) root.findViewById(R.id.gridProductos);
+            gridView = (GridView) root.findViewById(R.id.gridSucursales);
             SucursalAdapter sucursalAdapter = new SucursalAdapter(root.getContext(), sucursales);
             gridView.setAdapter(sucursalAdapter);
         }catch (Exception e){
@@ -81,8 +85,8 @@ public class SucursalesFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.action_add:
-                Intent intent = new Intent(getContext(), FormActivity.class);
+            case R.id.action_add_sucursal:
+                Intent intent = new Intent(getContext(), SucursalForm.class);
                 intent.putExtra("name","Sucursales");
                 getActivity().startActivity(intent);
                 //Toast.makeText(getContext(), "Sucursales", Toast.LENGTH_SHORT).show();
